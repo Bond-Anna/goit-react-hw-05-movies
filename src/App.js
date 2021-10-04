@@ -1,4 +1,4 @@
-import { Route, Switch } from 'react-router';
+import { Route, Switch } from 'react-router-dom';
 import Navigation from './components/Navigation/Navigation';
 import HomeView from './views/HomeViews';
 import MoviesViews from './views/MoviesViews';
