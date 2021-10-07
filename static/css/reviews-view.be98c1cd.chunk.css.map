@@ -1,0 +1,1 @@
+{"version":3,"sources":["webpack://src/views/Reviews.module.css"],"names":[],"mappings":"AAAA,2BACE,eACF,CACA,4BACE,eAAgB,CAChB,aACF","file":"reviews-view.be98c1cd.chunk.css","sourcesContent":[".reviewItem {\n  list-style: none;\n}\n.reviewTitle {\n  font-weight: 600;\n  color: rgb(234, 41, 23);\n}\n"]}
