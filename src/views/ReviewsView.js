@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import css from './Reviews.module.css';
 
 const URL = 'https://api.themoviedb.org';
 const API_Key = 'b0a51c5fb2c3f42914edb92a4e0001cb';
@@ -21,8 +22,8 @@ function Reviews({ id }) {
     <>
       {reviews.length > 0 ? (
         reviews.map(review => (
-          <li key={review.id}>
-            <p>Author: {review.author}</p>
+          <li key={review.id} className={css.reviewItem}>
+            <p className={css.reviewTitle}>Author: {review.author}</p>
             <p>{review.content}</p>
           </li>
         ))

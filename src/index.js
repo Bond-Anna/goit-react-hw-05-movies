@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import { BrowserRouter } from 'react-router-dom';
 import 'modern-normalize/modern-normalize.css';
 import './index.css';
+
 import App from './App';
 
 ReactDOM.render(

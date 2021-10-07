@@ -1,0 +1,7 @@
+.reviewItem {
+  list-style: none;
+}
+.reviewTitle {
+  font-weight: 600;
+  color: rgb(234, 41, 23);
+}

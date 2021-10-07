@@ -1,11 +1,19 @@
+.navigation {
+  padding: 10px 0;
+  border-bottom: 2px solid black;
+}
 .link {
   font-size: 18px;
   font-weight: 600;
-  margin: 10px;
+  margin-left: 20px;
+  padding: 10px 0;
+
   color: inherit;
+  text-decoration: none;
 }
 .activeLink {
-  color: tomato;
+  color: rgb(234, 41, 23);
 }
 .link:hover {
+  text-decoration: underline 3px;
 }

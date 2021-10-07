@@ -1,35 +1,46 @@
 import { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
+import css from './HomeViews.module.css';
 
 const URL = 'https://api.themoviedb.org/3';
 const API_Key = 'b0a51c5fb2c3f42914edb92a4e0001cb';
 const Time_Window = 'day';
 
 function HomeView() {
+  const location = useLocation();
+  console.log('HomeView', location);
   const [movies, setMovies] = useState([]);
   useEffect(() => {
     fetch(`${URL}/trending/all/${Time_Window}?api_key=${API_Key}`)
       .then(response => {
-        console.log(response);
         if (response.ok) {
           return response.json();
         }
-        throw new Error(response.status_message);
+        throw new Error(response.status);
       })
       .then(({ results }) => {
-        console.log({ ...results });
         setMovies([...results]);
-      })
-      .catch(error => console.log(error.status_message));
+      });
   }, []);
   return (
-    <ul>
-      {movies.map(movie => (
-        <li key={movie.id}>
-          <Link to={`/movies/${movie.id}`}>{movie.title || movie.name}</Link>
-        </li>
-      ))}
-    </ul>
+    <>
+      <h2 className={css.pageTitle}>Trending for today</h2>
+      <ul>
+        {movies.map(movie => (
+          <li key={movie.id} className={css.movieItem}>
+            <Link
+              to={{
+                pathname: `/movies/${movie.id}`,
+                state: { from: location },
+              }}
+              className={css.movie}
+            >
+              {movie.title || movie.name}{' '}
+            </Link>
+          </li>
+        ))}
+      </ul>
+    </>
   );
 }
 export default HomeView;

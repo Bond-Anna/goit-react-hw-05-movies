@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Link, useHistory, useLocation } from 'react-router-dom';
+import css from './MoviesView.module.css';
 
 const URL = 'https://api.themoviedb.org/3';
 const API_Key = 'b0a51c5fb2c3f42914edb92a4e0001cb';
@@ -49,15 +50,17 @@ function MoviesViews() {
 
   return (
     <>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} className={css.form}>
         <input type="text" name="searchName" onChange={handleChange} />
         <button type="submit">Search</button>
       </form>
       {movieList && (
         <ul>
           {movieList.map(movie => (
-            <li key={movie.id}>
-              <Link to={`/movies/${movie.id}`}>{movie.title}</Link>
+            <li key={movie.id} className={css.movieItem}>
+              <Link to={`/movies/${movie.id}`} className={css.movie}>
+                {movie.title}
+              </Link>
             </li>
           ))}
         </ul>

@@ -1,0 +1,19 @@
+.cast {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+.actor {
+  list-style: none;
+  margin: 10px 0;
+}
+.actorImg {
+  width: 100px;
+}
+.actorName {
+  margin: 0;
+  font-weight: 600;
+  color: rgb(234, 41, 23);
+}
+.actorCharacter {
+  margin: 0;
+}

@@ -1,0 +1,56 @@
+.btn {
+  width: 95px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  margin: 10px 0;
+  border: none;
+  background-color: transparent;
+}
+.btn:hover {
+  font-size: 16px;
+  /* font-weight: 600; */
+  color: rgb(234, 41, 23);
+}
+.btnIcon {
+  /* width: 30px; */
+  margin-right: 5px;
+}
+.mainInfo {
+  display: flex;
+  padding-bottom: 20px;
+  border-bottom: 1px solid black;
+}
+.info {
+  margin-left: 40px;
+  padding: 20px 0;
+}
+.poster {
+  width: 250px;
+}
+.addInfo {
+  padding: 20px 0;
+  border-bottom: 1px solid black;
+}
+.addInfo_title {
+  margin: 0 0 15px 0;
+}
+.addList {
+  margin: 0;
+}
+.additional {
+  color: black;
+}
+.addList_item {
+  padding: 0 0 10px 0;
+}
+.additional:hover,
+.additional:active {
+  font-weight: 600;
+  color: rgb(234, 41, 23);
+}
+.active {
+  font-weight: 600;
+  color: rgb(234, 41, 23);
+}
