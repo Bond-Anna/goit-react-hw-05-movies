@@ -4,14 +4,16 @@ import Navigation from './components/Navigation/Navigation';
 import './App.css';
 
 const HomeView = lazy(() =>
-  import('./views/HomeViews.js' /* webpackChunkName: "home-view" */),
+  import('./views/HomeView/HomeViews.js' /* webpackChunkName: "home-view" */),
 );
 const MoviesViews = lazy(() =>
-  import('./views/MoviesViews.js' /* webpackChunkName: "movies-views" */),
+  import(
+    './views/SearchMovie/MoviesViews.js' /* webpackChunkName: "movies-views" */
+  ),
 );
 const MovieDetailsPage = lazy(() =>
   import(
-    './views/MovieDetailsPage.js' /* webpackChunkName: "movie-detail-page" */
+    './views/DetailsPage/MovieDetailsPage.js' /* webpackChunkName: "movie-detail-page" */
   ),
 );
 const NotFoundView = lazy(() =>

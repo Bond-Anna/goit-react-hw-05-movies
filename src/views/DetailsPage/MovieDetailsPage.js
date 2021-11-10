@@ -12,19 +12,20 @@ import { NavLink } from 'react-router-dom';
 
 import css from './MoviePage.module.css';
 const Cast = lazy(() =>
-  import('./CastView.js' /* webpackChunkName: "cast-views" */),
+  import('../Cast/CastView.js' /* webpackChunkName: "cast-views" */),
 );
 const Reviews = lazy(() =>
-  import('./ReviewsView.js' /* webpackChunkName: "reviews-view" */),
+  import('../Reviews/ReviewsView.js' /* webpackChunkName: "reviews-view" */),
 );
 
 const URL = 'https://api.themoviedb.org';
 const API_Key = 'b0a51c5fb2c3f42914edb92a4e0001cb';
+
 function MovieDetailsPage() {
   const location = useLocation();
   const history = useHistory();
   console.log('H', history);
-  console.log('L', location);
+  console.log('L: ', location);
   const { movieId } = useParams();
   const { url } = useRouteMatch();
   const [movie, setMovie] = useState(null);
@@ -43,13 +44,14 @@ function MovieDetailsPage() {
   }, [movieId]);
 
   const handleOnClik = () => {
-    history.push(location?.state?.from ?? '/');
+    history.push(location?.state?.from?.location ?? '/');
   };
 
   return (
     <>
       <button type="button" className={css.btn} onClick={handleOnClik}>
-        <BsBoxArrowInLeft className={css.btnIcon} /> Go back
+        <BsBoxArrowInLeft className={css.btnIcon} />{' '}
+        {location?.state?.from?.label ?? 'Go back'}
       </button>
       {movie && (
         <>
@@ -81,7 +83,7 @@ function MovieDetailsPage() {
             <ul className={css.addList}>
               <li className={css.addList_item}>
                 <NavLink
-                  to={`${url}/cast`}
+                  to={{ pathname: `${url}/cast`, state: { from: location } }}
                   className={css.additional}
                   activeClassName={css.active}
                 >
@@ -90,7 +92,7 @@ function MovieDetailsPage() {
               </li>
               <li>
                 <NavLink
-                  to={`${url}/reviews`}
+                  to={{ pathname: `${url}/reviews`, state: { from: location } }}
                   className={css.additional}
                   activeClassName={css.active}
                 >

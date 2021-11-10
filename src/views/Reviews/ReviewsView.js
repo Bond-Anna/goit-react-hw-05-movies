@@ -3,6 +3,7 @@ import css from './Reviews.module.css';
 
 const URL = 'https://api.themoviedb.org';
 const API_Key = 'b0a51c5fb2c3f42914edb92a4e0001cb';
+
 function Reviews({ id }) {
   const [reviews, setReviews] = useState([]);
   useEffect(() => {

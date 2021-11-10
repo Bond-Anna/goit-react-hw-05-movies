@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
+import { BsCameraReels } from 'react-icons/bs';
 import css from './HomeViews.module.css';
 
 const URL = 'https://api.themoviedb.org/3';
@@ -10,6 +11,7 @@ function HomeView() {
   const location = useLocation();
   console.log('HomeView', location);
   const [movies, setMovies] = useState([]);
+
   useEffect(() => {
     fetch(`${URL}/trending/all/${Time_Window}?api_key=${API_Key}`)
       .then(response => {
@@ -22,6 +24,7 @@ function HomeView() {
         setMovies([...results]);
       });
   }, []);
+
   return (
     <>
       <h2 className={css.pageTitle}>Trending for today</h2>
@@ -31,10 +34,11 @@ function HomeView() {
             <Link
               to={{
                 pathname: `/movies/${movie.id}`,
-                state: { from: location },
+                state: { from: { location, label: 'Back to Trending Movies' } },
               }}
               className={css.movie}
             >
+              <BsCameraReels className={css.icon} />
               {movie.title || movie.name}{' '}
             </Link>
           </li>

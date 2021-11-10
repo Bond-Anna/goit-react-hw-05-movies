@@ -17,8 +17,6 @@ function Cast({ id }) {
         setActors(cast);
       });
   }, [id]);
-  console.log(actors);
-  console.log(id);
   return (
     <div className={css.cast}>
       {actors.map(actor => (

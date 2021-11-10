@@ -1,0 +1,24 @@
+.form {
+  display: flex;
+  margin-top: 20px;
+  margin-left: 20px;
+}
+.formBtn {
+  background-color: transparent;
+  border: none;
+}
+.formBtn:hover {
+  font-size: 18px;
+  color: rgb(234, 41, 23);
+}
+.movieItem {
+  margin: 10px 0;
+}
+.movie {
+  color: black;
+}
+.movie:hover,
+.movie:active {
+  font-weight: 600;
+  color: rgb(234, 41, 23);
+}

@@ -1,8 +1,9 @@
-.form {
-  margin-top: 20px;
-}
 .movieItem {
   margin: 10px 0;
+  list-style: none;
+}
+.icon {
+  margin-right: 10px;
 }
 .movie {
   color: black;
@@ -11,4 +12,8 @@
 .movie:active {
   font-weight: 600;
   color: rgb(234, 41, 23);
+}
+.pageTitle {
+  margin-top: 20px;
+  margin-left: 20px;
 }
